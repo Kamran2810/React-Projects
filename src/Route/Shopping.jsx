@@ -11,23 +11,23 @@ const Shopping = () => {
   });
   const products = [
     {
-      title: 'Round Neck White T-Shirt',
+      title: 'Slim Fit Cotton T-Shirt',
       imgUrl:
-        'https://rukminim1.flixcart.com/image/800/960/l4vnbm80/t-shirt/3/l/x/xs-fc4356-metronaut-original-imagfzmvuvykzneg.jpeg?q=50',
-      price: 299,
+        'https://i0.wp.com/www.juxar.com/wp-content/uploads/2022/01/GOOD-VIBES-Medium.jpg?resize=600%2C600&ssl=1',
+      price: 399,
       index: 0,
     },
     {
-      title: 'Round Neck Blue T-Shirt',
+      title: 'Oversize Loose Fit T-Shirt',
       imgUrl:
-        'https://rukminim1.flixcart.com/image/800/960/kzd147k0/t-shirt/q/z/m/m-tsrt-303-reya-original-imagbefyffzh68wj.jpeg?q=50',
-      price: 399,
+        'https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1654932334_9186569.jpg?w=376&dpr=1.0',
+      price: 699,
       index: 1,
     },
     {
-      title: 'Round Neck Grey T-Shirt',
+      title: 'Black Printed Cut T-Shirt',
       imgUrl:
-        'https://rukminim1.flixcart.com/image/800/960/kkfrjww0/t-shirt/h/1/t/l-t312-cgblwh-new-eyebogler-original-imafzs5hrjgzsfpr.jpeg?q=50',
+        'https://m.media-amazon.com/images/I/41OIfjfWP+L._AC_SX480_SY360_.jpg',
       price: 499,
       index: 2,
     },
@@ -65,24 +65,26 @@ const Shopping = () => {
             <h1 className="text-center font-semibold text-4xl mb-6">
               Our Items
             </h1>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-10 text-start bg-slate-100 p-4">
+            <div className="container1">
               {products.map((el, ind) => {
                 return (
-                  <div className="p-2 flex flex-col bg-cyan-100 " key={ind}>
+                  <div className="card1" key={ind}>
                     <img
                       src={el.imgUrl}
                       alt={el.title}
                       srcset=""
-                      className="h-60"
+                      className="images1"
                     />
-                    <h1>{el.title}</h1>
-                    <h2>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    </h2>
-                    <h1>
-                      <span>Price:Rs</span>
-                      {el.price}
-                    </h1>
+                    <div className='details1'>
+                      <h1>{el.title}</h1>
+                      <h2>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      </h2>
+                      <h1>
+                        <span>Price : Rs </span>
+                        {el.price} /-
+                      </h1>
+                      </div>
                     <Button
                       variant="contained"
                       id={ind}
@@ -112,25 +114,25 @@ const Shopping = () => {
               You Have Orderd
             </h1>
             {/* Cart Item Gallary */}
-            <div className="flex flex-col justify-center items-center bg-slate-100 p-2">
+            <div className="flex flex-col  items-center bg-slate-100 p-2">
               {cart.items.map((el, ind) => {
                 return (
-                  <div className="p-2 flex flex-row bg-cyan-100 w-3/4 mb-4">
+                  <div className="p-2 flex flex-row justify-space-between items-space-between bg-white-100 w-3/4 mb-4">
                     <img
                       src={products[el]['imgUrl']}
                       alt={products[el]['title']}
                       srcset=""
                       className="h-40"
                     />
-                    <div className="info flex flex-col items-center justify-center">
+                    <div className="info flex flex-col items-space-between justify-center">
                       <h1>{products[el]['title']}</h1>
                       <h2>
                         Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit.
                       </h2>
                       <h1>
-                        <span>Price:Rs</span>
-                        {products[el]['price']}
+                        <span>Price :Rs </span>
+                        {products[el]['price']} /-
                       </h1>
                     </div>
                     <div className="Center">

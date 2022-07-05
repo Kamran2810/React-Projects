@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-//import { useSelector, UseDispatch } from 'react-redux';
-//import { setHeight, setWeight, selectBmiInput } from '../Redux/slice/bmiSlice';
+
 
 const Bmi = () => {
   const [resultDiv, setResultDiv] = useState(false);
-  //const bmiInput = useSelector(selectBmiInput);
+
   const [inputVal, setInputVal] = useState({ height: '', weight: '' });
   const [bmiVal, setBmiVal] = useState({
     bmi: '',
@@ -25,9 +24,9 @@ const Bmi = () => {
         maxWeight: 24.9 * (inputVal.height * 0.01) * (inputVal.height * 0.01),
         healthState:
           bmiFormula < 18.6
-            ? 'Under Weight'
+            ? 'Under'
             : bmiFormula >= 24.9
-            ? 'OverWeight'
+            ? 'Over'
             : 18.6 < bmiFormula < 24.9
             ? 'Healthy'
             : 'none',
@@ -38,11 +37,11 @@ const Bmi = () => {
   console.log(bmiVal.bmi, bmiVal.healthState);
   return (
     <>
-      <div className="container flex flex-col items-center w-1/3 mx-auto bg bg-cyan-50">
-        <div className="text-3xl text-center font-bold bg-blue-400 w-full mb-2">
+      <div className="m flex flex-col items-center w-1/3 mx-auto border border-2 mt-10 ">
+        <div className="text-3xl text-center text-white font-bold bg-blue-400 w-full mb-2 ">
           BMI Calculator
         </div>
-        <h1>Enter Your Height In CM:</h1>
+        <h1>Enter Your Height (in CM)</h1>
         <input
           type="number"
           name="height"
@@ -54,7 +53,7 @@ const Bmi = () => {
             })
           }
         />
-        <h1>Enter Your Weight In KG:</h1>
+        <h1>Enter Your Weight (in KG)</h1>
         <input
           type="number"
           name="weight"
@@ -78,10 +77,8 @@ const Bmi = () => {
           >
             <h1>Your BMI is {bmiVal.bmi}</h1>
             <h2>
-              Your Suggested weight range in between :
-              {`${bmiVal.minWeight.toFixed(0)}kg - ${bmiVal.maxWeight.toFixed(
-                0
-              )}kg`}
+              Your Suggested weight range in between : 
+               {` ${bmiVal.minWeight.toFixed(0)} kg - ${bmiVal.maxWeight.toFixed(0)} kg`}
             </h2>
             <h1>You are in {bmiVal.healthState} Weight Range</h1>
           </div>
